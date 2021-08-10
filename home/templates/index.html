@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- lemon-jelly font  -->
+    <link href="http://fonts.cdnfonts.com/css/lemon-jelly-personal-use" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- for icons  -->
+    <script src="https://kit.fontawesome.com/011a1179dd.js" crossorigin="anonymous"></script>
+    <!-- bootstrap javascript link  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- <animation link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- jquery link  -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- css link  -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- javascript ajax link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- title  -->
+    <title>Home | Mohan Biscuits</title>
+</head>
+<body>
+    <!-- header part -->
+
+    <header>
+            <div class="row">
+                <div class="col-md-12 nopadding ">
+                    <img src="{% static 'img\header.png' %}" class=" header">
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg  navigation nopadding">
+                <div class="container-fluid justify-content-end nopadding full">
+                    
+                    
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav wrapper">
+                      <li class="nav-item  home">
+                        <span class="active"><a href="#" ><i class="fas fa-home"></i><div class="c">HOME</div></a></span>
+                      </li>
+                      <li class="nav-item  product">
+                        <div class="button ">
+                            <a href="product"><div class="icon"><i class="fas fa-cookie-bite"></i></div>
+                            <span>PRODUCT</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  about">
+                        <div class="button">
+                            <a href="aboutus"><div class="icon"><i class="fas fa-users"></i></div>
+                            <span>ABOUT US</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  contact">
+                        <div class="button">
+                            <a href="contact"><div class="icon"><i class="fas fa-phone-alt"></i></div>
+                            <span>CONTACT</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  inquiry">
+                        <div class="button">
+                            <a href="inquiry"><div class="icon"><i class="fas fa-comment-dots"></i></div>
+                            <span>INQUIRY</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item career">
+                        <div class="button">
+                            <a href="careerstatus"><div class="icon"><i class="fas fa-user-edit"></i></div>
+                            <span>CAREER</span></a>
+                          </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+
+        <!-- main part  -->
+
+        <div class="container-fluid main">
+
+            <!-- photo sliding part  -->
+            <div class="container-fluid top-part">
+                <div class="row">
+                    <div class="col-md-12 photo-slider">
+                        <div id="slideshow-example" data-component="slideshow">
+                            <div role="list">
+                                {% for sliders in slider %}
+                                <div class="slide-top">
+                                    <img src="{{sliders.photo.url}}" style="width: 100%; padding: 0px;">
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 status">
+                        {% for oc in status %}
+                            {% if forloop.last == True %}
+                                <h1>{{oc.status}}</h1>
+                            {% endif %}
+                        {% endfor%}
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- slogan part  -->
+            <div class="container-fluid slogan-part">
+                <div class="row">
+                    <div class="col-md-4 circle-1">
+                        <div class="title-1">
+                            <p>Packed<br>With<br>Care</p>
+                        </div>
+                        <div class="description-part">
+                            <p>
+                                We take utmost care that every product that reaches you is perfectly baked. Nothing is left to chance when it comes to the packaging as all our produts are hand packed by our team.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 circle-2">
+                        <div class="title-2">
+                            <p>Made<br>With<br>Love</p>
+                        </div>
+                        <div class="description-part">
+                            <p>
+                                We use the best quality ingredients to give your taste buds the satisfaction of motherly and home baked warmth. All the ingredients are mixed according to the secret recipes that have been passed down through decades so that there is no compromise in the quality of our foods.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 circle-3">
+                        <div class="title-3">
+                            <p>Served<br>With<br>Delights</p>
+                        </div>
+                        <div class="description-part">
+                            <p>
+                                We make sure that every product we serve brings a joy in your life. Whether alone or with friends and family, you can always opt our bakery items for tea time and refreshments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- image sldieshow part  -->
+            <div class="container-fluid slideshow-part">
+                <div class="row">
+                    <div class="col-md-12 photo-slider">
+                        <div class="slide hi-slide">
+                            <div class="hi-prev "></div>
+                              <div class="hi-next "></div>
+                              <ul>
+                                  {% for slideshows in slideshow %}
+                                  <li><img src="{{slideshows.photo.url}}" alt="Img 1" /></li>
+                                  {% endfor %}
+                              </ul>
+                          </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-md-12 more">
+                            <div class="arrow-btn">
+                                <a href="product"><span class="see-more">SEE MORE</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <!-- bestseller part  -->
+            <div class="container bestseller">
+                <div class="row">
+                    <h1>Our Best Selling Product</h1>
+                    <div class="underline">
+                        <img src="{% static 'img\underline.png' %}">
+                        </div> 
+                    <div class="col-md-4 best-1">
+                        <img src="{% static 'img/nariwal.jpg' %}">
+                        <h3>Nariwal Biscuit</h3>
+                    </div>
+                    <div class="col-md-4 best-2">
+                        <img src="{% static 'img/sano bread.jpg' %}">
+                        <h3>Sliced Bread</h3>
+                    </div>
+                    <div class="col-md-4 best-3">
+                        <img src="{% static 'img/coco.jpg' %}">
+                        <h3>Coco Biscuit</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer part  -->
+
+        <footer>
+          <div class="container">
+              <div class="row">
+                     <div class="col-md-3 footer-1">
+                         <span class="contact"><h1>Call us at</h1>026-522208</span>
+                     </div>
+                     <div class="col-md-6 footer-2">
+                         <img src="{% static 'img\mbjpg.png' %}" class="mb">
+                         <p>All Rights Reserved &copy; 2020, Mohan Biscuit</p>
+                     </div>
+                     <div class="col-md-3 footer-3">
+                         <span class="follow"><h1>Follow us at</h1>
+                             <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                             <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+                         </span>
+                     </div>
+                 </div>
+            </div>
+     </footer>
+
+     <!-- javascript part  -->
+
+     
+     <script type="text/javascript" src="{% static 'js/home.js' %}" ></script>
+     <script>
+         $('.slide').hiSlide();
+     </script>
+
+
+</body>
+</html>

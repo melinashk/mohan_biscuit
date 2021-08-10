@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>INQUIRY</title>
+        <!-- bootstrap css link  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- lemon-jelly font  -->
+        <link href="http://fonts.cdnfonts.com/css/lemon-jelly-personal-use" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!-- for fonts  -->
+        <script src="https://kit.fontawesome.com/011a1179dd.js" crossorigin="anonymous"></script>
+        <!-- for animation  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!-- css style link  -->
+        <link rel="stylesheet" href="{% static 'css/inquiry.css' %}">
+    </head>
+    <body>
+        <!-- HEADER STARTS -->
+        <header>
+            <div class="row">
+                <div class="col-md-12 nopadding ">
+                    <img src="{% static 'img/header.png' %}" class=" header">
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg  navigation nopadding">
+                <div class="container-fluid justify-content-end nopadding full">
+                    
+                    
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav wrapper">
+                      <li class="nav-item  home">
+                        <div class="button">
+                            <a href="/"><div class="icon"><i class="fas fa-home"></i></div>
+                            <span>HOME</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  product">
+                        <div class="button ">
+                            <a href="product"><div class="icon"><i class="fas fa-cookie-bite"></i></div>
+                            <span>PRODUCT</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  about">
+                        <div class="button">
+                            <a href="aboutus"><div class="icon"><i class="fas fa-users"></i></div>
+                            <span>ABOUT US</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  contact">
+                        <div class="button">
+                            <a href="contact"><div class="icon"><i class="fas fa-phone-alt"></i></div>
+                            <span>CONTACT</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  inquiry">
+                          <span class="active"><a href="#" ><i class="fas fa-comment-dots"></i><div class="c">INQUIRY</div></a></span>
+                      </li>
+                      <li class="nav-item career">
+                        <div class="button">
+                            <a href="career"><div class="icon"><i class="fas fa-user-edit"></i></div>
+                            <span>CAREER</span></a>
+                          </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+       <!-- main body starts  -->
+        <div class="container-fluid main">
+            <div class="row">
+                <div class="col-md-6 left">
+                    <div class="pic">
+                        <!-- image -->
+                        <img src="{% static 'img/inquirypic.png' %}">
+                    </div>
+                    <!-- typewriter animation  -->
+                    <div class="typing">
+                        <div class="type1">
+                            <h1>If you have</h1>
+                        </div>
+                        <div class="type2">
+                            <h1>any queries</h1>
+                        </div>
+                        <div class="type3">
+                            <h1>feel free</h1>
+                        </div>
+                        <div class="type4">
+                            <h1>to write us</h1>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- inquiry form  -->
+                <div class="col-md-6 noteform">
+                    <form method="POST" action="#">
+                        {% csrf_token %}
+                        <div class="tapes ue">
+                            <i class="fas fa-user"></i><input type="text" name="name" placeholder="FULL NAME" size="20" required="required">
+                        </div>
+                        <div class="tapes num">
+                            <i class="fas fa-mobile"></i> <input type="text" name="number" placeholder="NUMBER" size="20"
+                            required="required">
+                        </div>
+                        <div class="tapes add">
+                            <i class="fas fa-map-marker-alt"></i><input type="text"name="address" placeholder="ADDRESS" size="20"
+                            required="required">
+                        </div> 
+                        <div class="tapes">
+                            <i class="far fa-envelope"></i><input type="email" name="email" placeholder="EMAIL" size="20"
+                            required="required">
+                        </div>
+                        <div class="big-tape">
+                            <i class="fas fa-edit"></i><br>
+                            <textarea id="subject" name="query" placeholder="YOUR QUERIES" required="required" style="height:150px"></textarea>
+                        </div>
+                        <div class="buttons">
+                            <button class="blob-btn">
+                              Submit
+                              <span class="blob-btn__inner">
+                                <span class="blob-btn__blobs">
+                                  <span class="blob-btn__blob"></span>
+                                  <span class="blob-btn__blob"></span>
+                                  <span class="blob-btn__blob"></span>
+                                  <span class="blob-btn__blob"></span>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                              <defs>
+                                <filter id="goo">
+                                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                                  <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                                </filter>
+                              </defs>
+                            </svg>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER STARTS -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                       <div class="col-md-3 footer-1">
+                           <span class="contact"><h1>Call us at</h1>026-522208</span>
+                       </div>
+                       <div class="col-md-6 footer-2">
+                           <img src="{% static 'img/mbjpg.png' %}" class="mb">
+                           <p>All Rights Reserved &copy; 2020, Mohan Biscuit</p>
+                       </div>
+                       <div class="col-md-3 footer-3">
+                           <span class="follow"><h1>Follow us at</h1>
+                               <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                               <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+                           </span>
+                       </div>
+               </div>
+           </div>   
+       </footer> 
+       <!-- bootstrap javascript  -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>    
+        
+    </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- title  -->
+        <title>Contact | Mohan Biscuits</title>
+        <!-- bootstrap link  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- lemon jelly font  -->
+        <link href="http://fonts.cdnfonts.com/css/lemon-jelly-personal-use" rel="stylesheet">
+        <!-- for icons  -->
+        <script src="https://kit.fontawesome.com/011a1179dd.js" crossorigin="anonymous"></script>
+        <!-- css link  -->
+        <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    </head>
+    <body>
+
+        <!-- header      -->
+
+        <header>
+            <div class="row">
+                <div class="col-md-12 nopadding ">
+                    <img src="{% static 'img\header.png' %}" class=" header">
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg  navigation nopadding">
+                <div class="container-fluid justify-content-end nopadding full">
+                    
+                    
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav wrapper">
+                      <li class="nav-item  home">
+                        <div class="button">
+                            <a href="/"><div class="icon"><i class="fas fa-home"></i></div>
+                            <span>HOME</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  product">
+                        <div class="button ">
+                            <a href="product"><div class="icon"><i class="fas fa-cookie-bite"></i></div>
+                            <span>PRODUCT</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  about">
+                        <div class="button">
+                            <a href="aboutus"><div class="icon"><i class="fas fa-users"></i></div>
+                            <span>ABOUT US</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item  contact">
+                        <span class="active"><a href="#" ><i class="fas fa-phone-alt"></i><div class="c">CONTACT</div></a></span>
+                      </li>
+                      <li class="nav-item  inquiry">
+                        <div class="button">
+                            <a href="inquiry"><div class="icon"><i class="fas fa-comment-dots"></i></div>
+                            <span>INQUIRY</span></a>
+                          </div>
+                      </li>
+                      <li class="nav-item career">
+                        <div class="button">
+                            <a href="careerstatus"><div class="icon"><i class="fas fa-user-edit"></i></div>
+                            <span>CAREER</span></a>
+                          </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+
+        <!-- main body  starts  -->
+        <div class="container-fluid main">
+            <!-- top part (list and map) -->
+        <div class="container-fluid top-part">
+            <div class="row">
+                <div class="col-md-3 list">
+                    <div class="scroll-bar-wrap">
+                        <h2>Our Distributors</h2>
+                        <img src="{% static 'img\underline.png' %}">
+                        <div class="scroll-box">
+                            {% for distributors in distributor%}
+                            <ul>
+                                <li>{{distributors.store_name}}</li>
+                                <li>{{distributors.address}}</li>
+                                <li>{{distributors.phone}}</li>
+                                <hr>
+                            </ul>
+                            {% endfor %}
+                          </div>
+                          <div class="cover-bar"></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <iframe  class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2989.7482292149507!2d87.34408770802035!3d26.984948517330015!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x44d5ca9af5495329!2sMohan%20Biscuit%20Factory!5e0!3m2!1sen!2snp!4v1621073854992!5m2!1sen!2snp"   style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+             
+        </div>
+
+        <!-- middle part (4 notes)  -->
+
+        <div class="container-fluid notes-part">
+            <div class="row middle-part">
+                <div class="col-md-6 display-middle">
+                    <div class="sticky-note">
+                        <h2>Meet Us At</h2>
+                        <img src="{% static 'img\underline.png' %}">
+                        <ul>
+                            <li>Ghaletar,Dhankuta-4,Province-1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 display-middle">
+                    <div class="sticky-note">
+                        <h2>Call Us At</h2>
+                        <img src="{% static 'img\underline.png' %}">
+                        <ul>
+                            <li> 026-522208</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row middle-part">
+                <div class="col-md-6 display-middle">
+                    <div class="sticky-note">
+                        <h2>Follow Us At</h2>
+                        <img src="{% static 'img/underline.png' %}">
+                            <ul>
+                                <li><a href="#" class="fb"><i class="fab fa-facebook"></i></a><a href="#" class="ig"><i class="fab fa-instagram"></i></a></li>
+                                
+                            </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 display-middle">
+                    <div class="sticky-note">
+                        <h2>Write Us At</h2>
+                        <img src="{% static 'img\underline.png' %}">
+                        <ul>
+                            <li class="gmail"><a href="mailto:mohan.biscuit.f@gmail.com"><span>mohan.biscuit.f@gmail.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- bottom part  -->
+
+        <div class="container-fluid bottom-part">
+            
+            <div class="row">
+                <div class="col-md-4 display-bottom">
+                    <div class="box-last-1">
+                        <h2>Our Manager</h2><br>
+                        <img class="bottom-img" src="{% static 'img\underline.png' %}"><br>
+                        <div class=" box-info">
+                            {% for managers in manager %}
+                            <img src="{{managers.photo.url}}">
+                            {% endfor %}
+                                {% for managers in manager %}
+                            <ul>
+                                <li>{{managers.name}}</li>
+                                <li>{{managers.address}}</li>
+                                <li>{{managers.phone}}</li>
+                            </ul>
+                            {% endfor %}
+                        </div> 
+                    </div> 
+                </div>
+                <div class="col-md-4 display-bottom">
+                    <div  class="box-last-2">
+                        <h2>Our Accountant</h2><br>
+                        <img class="bottom-img" src="{% static 'img\underline.png' %}"><br>
+                        <div class=" box-info">
+                            {% for accountants in accountant %}
+                            <img src="{{accountants.photo.url}}">
+                            {% endfor %}
+                                {% for accountants in accountant %}
+                            <ul>
+                                <li>{{accountants.name}}</li>
+                                <li>{{accountants.address}}</li>
+                                <li>{{accountants.phone}}</li>
+                            </ul>
+                            {% endfor %}
+                        </div> 
+                    </div> 
+                </div>
+                <div class="col-md-4 display-bottom">
+                    <div class="box-last-3">
+                        <h2>Our Salesperson</h2><br>
+                        <img class="bottom-img" src="{% static 'img\underline.png' %}"><br>
+                        <div class=" box-info">
+                            {% for salespersons in salesperson %}
+                            <img src="{{salespersons.photo.url}}">
+                            {% endfor %}
+                                {% for salespersons in salesperson %}
+                            <ul>
+                                <li>{{salespersons.name}}</li>
+                                <li>{{salespersons.address}}</li>
+                                <li>{{salespersons.phone}}</li>
+                            </ul>
+                            {% endfor %}
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- footer  -->
+
+        <footer>
+          <div class="container">
+              <div class="row">
+                     <div class="col-md-3 footer-1">
+                         <span class="contact"><h1>Call us at</h1>026-522208</span>
+                     </div>
+                     <div class="col-md-6 footer-2">
+                         <img src="{% static 'img\mbjpg.png' %}" class="mb">
+                         <p>All Rights Reserved &copy; 2020, Mohan Biscuit</p>
+                     </div>
+                     <div class="col-md-3 footer-3">
+                         <span class="follow"><h1>Follow us at</h1>
+                             <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                             <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+                         </span>
+                     </div>
+             </div>
+         </div>
+             
+         
+     </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>    
+        
+    </body>
+</html>
